@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #85148f, #2d0233);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* ... (todo el resto del CSS permanece igual) ... */
+
+.contenedor-romantico {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-ver-capitulo {
+    background: linear-gradient(45deg, #9a2da3, #85148f);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(154, 45, 163, 0.4);
+    transform: scale(1);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-ver-capitulo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(154, 45, 163, 0.6);
+}
+
+.btn-ver-capitulo:active {
+    transform: scale(0.98);
+}
+
+.btn-ver-capitulo i {
+    transition: transform 0.3s ease;
+}
+
+.btn-ver-capitulo:hover i {
+    transform: scale(1.2);
+}
+
+.pregunta-container {
+    display: none;
+    animation: aparecer 0.5s ease-out;
+}
+
+.corazon-animado i {
+    color: #e91e63;
+    font-size: 3rem;
+    text-shadow: 0 0 15px rgba(233, 30, 99, 0.7);
+    margin-bottom: 20px;
+    animation: latido 1s infinite;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.botones-respuesta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    position: relative;
+    min-height: 100px;
+}
+
+.btn-respuesta {
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: 120px;
+}
+
+.btn-si {
+    background: linear-gradient(45deg, #9a2da3, #6a1b9a);
+    color: white;
+    box-shadow: 0 4px 15px rgba(154, 45, 163, 0.4);
+    border-radius: 10px;
+}
+
+.btn-no {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: static;
+    transition: all 0.2s ease-out !important; /* Más rápido */
+}
+
+.respuesta-container {
+    display: none;
+    animation: aparecer 0.5s ease-out;
+}
+
+.mensaje-amor {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(233, 30, 99, 0.7);
+    margin-bottom: 20px;
+    animation: latido 1s infinite;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos específicos para móviles */
+@media (max-width: 768px) {
+  .contenedor-romantico {
+    padding: 20px;
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .botones-respuesta {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .btn-respuesta {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.1rem;
+  }
+
+  .mensaje-amor {
+    font-size: 3rem;
+  }
+
+  /* Ajuste especial para el botón "No" en móviles */
+  .btn-no {
+    position: absolute;
+    transition: all 0.1s ease-out !important;
+  }
+}
+/* Ajustes solo para móviles */
+/* Versión mejorada de los estilos para móviles */
+@media (max-width: 768px) {
+  .contenedor-romantico {
+    padding: 20px;
+    width: 90%;
+    max-width: 350px; /* Ancho máximo reducido para móviles */
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    line-height: 1.3;
+  }
+
+  .botones-respuesta {
+    flex-direction: column;
+    gap: 20px; /* Más espacio entre botones */
+    margin-top: 25px;
+    align-items: center;
+    min-height: auto;
+  }
+
+  .btn-respuesta {
+    width: 80%; /* Ancho relativo pero no al 100% */
+    padding: 15px 0; /* Más altura para fácil tacto */
+    font-size: 1.2rem;
+    margin: 0 auto; /* Centrado horizontal */
+  }
+
+  /* Estilos específicos para el botón "No" en móviles */
+  .btn-no {
+    position: relative; /* Cambiado de absolute a relative */
+    margin-top: 10px;
+    transition: all 0.2s ease-out !important;
+  }
+
+  .mensaje-amor {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+}
